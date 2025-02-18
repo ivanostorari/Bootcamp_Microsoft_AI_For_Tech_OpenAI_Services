@@ -1,0 +1,76 @@
+{
+  "name": "azure-openai-demos",
+  "version": "1.0.0-beta.0",
+  "description": "Misc. experiments with Azure OpenAI",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "aoi-demos": "./src/cli/index.ts"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "clean-images": "rm ./src/dall-e-image-rest/generated-images/*.png && git co -- ./src/dall-e-image-rest/generated-images",
+    "dev": "cross-env NODE_ENV=development LOCAL_DEV=true npx tsx --trace-warnings ",
+    "english-translator-demo": "npm run prod -- ./src/english-translator/index.ts",
+    "gpt4-chatbot-demo": "npm run prod -- ./src/gpt4-chatbot/index.ts",
+    "gpt4-vision-demo": "npm run prod -- ./src/gpt4-vision/index.ts",
+    "gpt4-vision-compare-demo": "npm run prod -- ./src/gpt4-vision-compare/index.ts",
+    "image-generation-demo": "npm run prod -- ./src/dall-e-image-rest/index.ts",
+    "poetry-generator-demo": "npm run prod -- ./src/poetry-generator/index.ts ",
+    "prod": "cross-env NODE_ENV=production npx tsx ",
+    "scratch": "npm run dev -- ./src/scratch.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "text-completion-demo": "npm run prod -- ./src/text-to-emoji-lib/index.ts",
+    "text-completion-rest-demo": "npm run prod -- ./src/text-to-emoji-rest/index.ts",
+    "typecheck": "npx tsc --noEmit",
+    "typedoc": "npx typedoc --out ./docs --entryPointStrategy expand ./src/lib --plugin typedoc-plugin-markdown --readme none",
+    "whisper-transcribe-mp3-demo": "npm run prod -- ./src/whisper-transcribe-mp3/index.ts"
+  },
+  "engines": {
+    "node": ">= 20.x",
+    "npm": ">= 10.x"
+  },
+  "keywords": ["azure", "openai", "azure openai"],
+  "author": {
+    "name": "Michael Sprague",
+    "email": "ms388@cornell.edu"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@azure/openai": "1.0.0-beta.13",
+    "benny-hill": "1.3.0",
+    "boxen": "8.0.1",
+    "chalk": "5.4.1",
+    "common-tags": "1.8.2",
+    "dotenv": "16.4.7",
+    "figlet": "1.8.0",
+    "got": "14.4.6",
+    "inquirer": "12.4.2",
+    "langchain": "0.3.18",
+    "openai": "4.83.0",
+    "ora": "8.2.0",
+    "terminal-image": "3.1.1",
+    "uuid": "11.0.5",
+    "yargs": "17.7.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/common-tags": "1.8.4",
+    "@types/figlet": "1.7.0",
+    "@types/inquirer": "9.0.7",
+    "@types/node": "22.13.4",
+    "@types/uuid": "10.0.0",
+    "@types/yargs": "17.0.33",
+    "cross-env": "7.0.3",
+    "cz-git": "1.11.0",
+    "tsx": "4.19.2",
+    "typedoc": "0.27.7",
+    "typedoc-plugin-markdown": "4.4.2",
+    "typescript": "5.7.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  }
+}
