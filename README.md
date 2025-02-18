@@ -1,4 +1,4 @@
-# ct-azure-openai-playground
+# Azure_Openai_Playground
 
 Misc. experiments with Azure OpenAI
 
