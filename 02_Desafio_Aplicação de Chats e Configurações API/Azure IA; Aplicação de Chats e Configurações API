@@ -1,0 +1,48 @@
+
+"API e Semantic Kernel Básico":
+Objetivos e Pré-requisitos
+Objetivo Geral:
+Acesso ao Azure Open AI
+Compreensão dos LLMs (Modelos de Linguagem de Grande Escala)
+Noções básicas de codificação
+Pré-requisitos: Entendimento das chamadas de API
+Conceitos básicos sobre o Semantic Kernel e IA de Agentes
+Suporte para diversos modos:
+Chat
+Completar
+Imagens
+Áudio
+Exemplos de Chamada da API
+Uso da API:
+python
+client = AzureOpenAI(
+azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+api_version="2024-02-01"
+)
+
+Exemplo de Complete:
+json
+POST https://{endpoint}/openai/deployments/{deployment-id}/completions?api-version=2024-10-21
+{
+"prompt": ["tell me a joke about mango"],
+"max_tokens": 32,
+"temperature": 1.0,
+"n": 1
+}
+Segurança e Monitoramento
+Armazenamento Seguro e Logs: Azure Monitor
+Links Úteis para suporte e documentação:
+Referência do Azure OpenAI
+Como Monitorar o OpenAI
+Semantic Kernel
+O Que é o Semantic Kernel?
+Middleware de IA
+Funcionalidades: Executar funções para processos automáticos
+Agentes de IA integrados
+Arquitetura do Semantic Kernel
+Componentes principais:
+Kernel
+Functions
+Memory
+Vetores
